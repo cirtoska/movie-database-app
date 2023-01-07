@@ -15,7 +15,7 @@ const MovieList = ({ fetch }) => {
   }, [fetch]);
 
   return (
-    <div className="flex pb-5 pl-5 pr-10 overflow-x-auto">
+    <div className="flex pb-5 pl-5 pr-10 overflow-x-auto  transition-all duration-500 ease-linear">
       {movies.map((movie, id) => {
         return <MovieCard key={id} {...movie} />;
       })}
