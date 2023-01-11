@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import tmdb from "../../api/tmdb";
 import MovieCard from "./MovieCard";
+import tmdb from "../../api/tmdb";
 import { request } from "../../api/request";
 import Blur from "../../baseUI/blur/Blur";
 
@@ -15,7 +15,7 @@ const MovieList = ({ fetch }) => {
   }, [fetch]);
 
   return (
-    <div className="flex pb-5 pl-5 pr-10 overflow-x-auto  transition-all duration-500 ease-linear">
+    <div className="flex pb-5 pl-5 pr-10 overflow-x-auto">
       {movies.map((movie, id) => {
         return <MovieCard key={id} {...movie} />;
       })}

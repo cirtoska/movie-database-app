@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import Ellipsis from "../../baseUI/ellipsis/Ellipsis";
 import ProgressCircle from "../../baseUI/progress-circle/Progress";
 
 const MovieCard = ({
+  id,
   poster_path,
   name,
   title,
   first_air_date,
   release_date,
   vote_average,
+  media_type,
 }) => {
   const getPosterImg = `https://www.themoviedb.org/t/p/w220_and_h330_face${poster_path}`;
 
@@ -23,11 +26,13 @@ const MovieCard = ({
   return (
     <div className="flex flex-col pl-5 gap-2">
       <div className="relative">
-        <img
-          src={getPosterImg}
-          alt={name || title}
-          className="w-[150px] h-[225px] shadow-sm rounded-md hover:cursor-pointer"
-        />
+        <Link to={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`}>
+          <img
+            src={getPosterImg}
+            alt={name || title}
+            className="w-[150px] h-[225px] shadow-sm rounded-md hover:cursor-pointer"
+          />
+        </Link>
         <div className="absolute top-3 right-[10px]">
           <Ellipsis />
         </div>
