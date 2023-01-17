@@ -1,32 +1,41 @@
-import React from 'react'
-import FontAwesomeIcon from 'react-fontawesome'
+import React from "react";
+import { Link } from "react-router-dom";
+import FontAwesomeIcon from "react-fontawesome";
 
-const NavBarList = ({items}) => {
+const NavBarList = ({ items }) => {
   const getItem = (item) => {
-    let itemList = null
-    switch(item.type) {
-      case 'logo':
-        itemList = <img className='h-5 min-w-[154px]' src={item.src} alt={item.name} />
+    let itemList = null;
+    switch (item.type) {
+      case "logo":
+        itemList = (
+          <Link to="/">
+            <img className="h-5 min-w-[154px]" src={item.src} alt={item.name} />
+          </Link>
+        );
         break;
-      case 'language':
-        itemList = <p className='border-white rounded-[3px] py-[3px] px-[5px] border-[1px] border-solid hover:bg-white hover:text-tmdbDarkBlue'>{item.name}</p>
+      case "language":
+        itemList = (
+          <p className="border-white rounded-[3px] py-[3px] px-[5px] border-[1px] border-solid hover:bg-white hover:text-tmdbDarkBlue">
+            {item.name}
+          </p>
+        );
         break;
-      case 'icon':
-        itemList = <FontAwesomeIcon name={item.name} size='lg' />
-        break
+      case "icon":
+        itemList = <FontAwesomeIcon name={item.name} size="lg" />;
+        break;
       default:
-        itemList = <p>{item.name}</p>
-        break
-  } 
-  return itemList
-}
+        itemList = <p>{item.name}</p>;
+        break;
+    }
+    return itemList;
+  };
   return (
-    <ul className='flex gap-7 items-center'>
+    <ul className="flex gap-7 items-center">
       {items.map((item, index) => {
-        return <li key={index}>{getItem(item)}</li>
+        return <li key={index}>{getItem(item)}</li>;
       })}
     </ul>
-  )
-}
+  );
+};
 
-export default NavBarList
+export default NavBarList;

@@ -13,6 +13,8 @@ module.exports = {
           'linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url("https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/5GISMqlRXMEyBrgEqyvhaMMuQmJ.jpg")',
         searchButton:
           "linear-gradient(to right, rgba(30,213,169, 1) 0%, rgba(1,180,228, 1) 100%);",
+        movieGradient:
+          "linear-gradient(to right, rgba(10, 31, 52, 1) calc((50vw - 170px) - 340px), rgba(10, 31, 51, 0.8) 30%, rgba(10, 31, 52, 0.84) 100%)",
       },
     },
   },
