@@ -1,3 +1,44 @@
+# My Final Project from CodeCademy - FrontEnd Engineer Path --- IN PROGRESS
+
+For this project, I will build an application using everything I’ve learned in this course. I choose to build a Movie App using the Movie Database API.
+
+Project Requirements:
+- Build the application using React and Redux
+- Version control your application with Git and host the repository on GitHub
+- Use a project management tool (GitHub Projects, Trello, etc.) to plan your work
+- Write a README (using Markdown) that documents your project including:
+- Wireframes
+- Technologies used
+- Features
+- Future work
+- Write unit tests for your components
+- Write end-to-end tests for your application
+- Users can use the application on any device (desktop to mobile)
+- Users can use the application on any modern browser
+- Users can access your application at a URL
+- This means your application should be hosted online
+- Users are delighted with a cohesive design system
+- Users are delighted with animations and transitions
+- Users are able to leave an error states
+- Think about bad API calls, network failures. When an event like that happens, your app shouldn’t crash but provide a user a means to get back to a working state (retry button, go back button, etc.)
+- Get 90+ scores on Lighthouse
+- OPTIONAL: Get a custom domain name and use it for your application
+- OPTIONAL: Set up a CI/CD workflow to automatically deploy your application when the master branch in the repository changes
+- OPTIONAL: Make your application a progressive web app
+
+Prerequisites:
+- HTML
+- CSS
+- JavaScript
+- React
+- Redux
+- Git and GitHub
+- Enzyme and Jest
+- Selenium
+- Command line and file navigation
+- Wireframing
+- SEO fundamentals
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
