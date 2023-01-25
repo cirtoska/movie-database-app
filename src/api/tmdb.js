@@ -1,12 +1,22 @@
 import axios from "axios";
 
-export default axios.create({
+export const API_KEY = "410bdc996cd1816dbd359443c6c9970b";
+
+// export const instance = axios.create({
+//   baseURL: process.env.REACT_APP_BASE_URL,
+//   params: {
+//         api_key: `${API_KEY}`,
+//         // api_key: process.env.API_KEY,
+//       },
+// });
+export const instance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   headers: {
     Accept: "application/json",
   },
   params: {
     api_key: "410bdc996cd1816dbd359443c6c9970b",
+    // api_key: process.env.API_KEY,
   },
 });
 
@@ -16,12 +26,11 @@ export default axios.create({
 const BASE_AXIOS = axios.create({
   baseURL: "https://api.themoviedb.org/3%22%7D",
 });
-export const API_KEY = "410bdc996cd1816dbd359443c6c9970b";
 // export const Popular_URL =
 //   "https://api.themoviedb.org/3/movie/popular?api_key=410bdc996cd1816dbd359443c6c9970b&language=en-US&page=1";
 // export const Discover_URL =
 //   "https://api.themoviedb.org/3/discover/movie?api_key=410bdc996cd1816dbd359443c6c9970b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
-
+//
 // //export const detail_url= `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=410bdc996cd1816dbd359443c6c9970b&language=en-US`
 // export const img_url = "http://image.tmdb.org/t/p/w500";
 // export const fetchSingleMovie = (movieId) =>

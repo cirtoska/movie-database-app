@@ -20,6 +20,7 @@ const MovieCard = ({
   } else if (release_date) {
     airDate = new Date(release_date);
   }
+
   const options = { year: "numeric", month: "short", day: "numeric" };
   const formattedDate = airDate.toLocaleDateString("en-US", options);
 

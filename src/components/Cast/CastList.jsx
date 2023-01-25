@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { fetchSingleMovieCredits } from "../../api/tmdb";
@@ -15,18 +14,21 @@ const CastList = () => {
   );
 
   const movieCastData = movieCreditsQuery?.data?.cast;
-  const topBilledCast = movieCastData.slice(0, 9);
+  const topBilledCast = movieCastData?.slice(0, 9);
 
   console.log(topBilledCast);
   return (
-    <div className="flex overflow-x-auto m-4">
-      {topBilledCast?.map((cast, id) => (
-        <CastCard key={id} {...cast} />
-      ))}
-      <div className="absolute right-0 top-0 w-16 h-full">
-        <Blur />
+    <>
+      <h3 className="text-2xl font-semibold mx-6">Top Billed Cast</h3>
+      <div className="flex m-4">
+        {topBilledCast?.map((cast, id) => (
+          <CastCard key={id} {...cast} />
+        ))}
+        <div className="absolute right-0 top-0 w-16 h-full">
+          <Blur />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
