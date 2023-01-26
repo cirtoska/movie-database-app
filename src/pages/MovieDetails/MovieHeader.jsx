@@ -20,8 +20,6 @@ const MovieHeader = () => {
   const movieCrewData = movieCreditsQuery?.data?.crew;
   const job = ["director", "producer", "screenplay", "story"];
 
-  // console.log(movieCastData);
-
   useEffect(() => {
     const fetchMovies = async () => {
       const { data } = await instance.get(`movie/${id}`);
@@ -31,7 +29,6 @@ const MovieHeader = () => {
   }, []);
 
   if (movie.length === 0) return null;
-  console.log(movie);
 
   const getPosterImg = `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`;
 
@@ -40,7 +37,6 @@ const MovieHeader = () => {
   if (backdropImg) {
     backgroundImage = `https://image.tmdb.org/t/p/original${backdropImg}`;
   }
-  console.log(movie.backdrop_path);
   let airDate = new Date(movie.release_date);
   const options = { year: "numeric" };
   const formattedDate = airDate.toLocaleDateString("en-US", options);
@@ -56,17 +52,15 @@ const MovieHeader = () => {
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
-      className="bg-cover bg-center"
+      className="bg-cover bg-top"
     >
       <div className="p-10 bg-movieGradient text-white">
         <div className="max-w-[1200px] flex items-center justify-center gap-10 mx-auto">
-          {/* <div className="w-full"> */}
           <img
             className="rounded-t-lg mx-auto"
             src={getPosterImg}
             alt={movie.original_title}
           />
-          {/* </div> */}
           <section className="header">
             <h2 className="text-4xl font-extrabold">
               {movie.original_title}{" "}

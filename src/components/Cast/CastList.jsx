@@ -6,7 +6,6 @@ import Blur from "../../baseUI/blur/Blur";
 
 const CastList = () => {
   const { id } = useParams();
-  // const [cast, setCast] = useState()
   const movieCreditsQuery = useQuery(
     ["moviecredits", id],
     () => fetchSingleMovieCredits(id),
@@ -16,11 +15,10 @@ const CastList = () => {
   const movieCastData = movieCreditsQuery?.data?.cast;
   const topBilledCast = movieCastData?.slice(0, 9);
 
-  console.log(topBilledCast);
   return (
     <>
       <h3 className="text-2xl font-semibold mx-6">Top Billed Cast</h3>
-      <div className="flex m-4">
+      <div className="flex m-4 overflow-x-hidden">
         {topBilledCast?.map((cast, id) => (
           <CastCard key={id} {...cast} />
         ))}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FontAwesomeIcon from "react-fontawesome";
+import GoogleAuth from "../../api/GoogleAuth";
 
 const NavBarList = ({ items }) => {
   const getItem = (item) => {
@@ -8,7 +9,7 @@ const NavBarList = ({ items }) => {
     switch (item.type) {
       case "logo":
         itemList = (
-          <Link to="/">
+          <Link to={item.link}>
             <img className="h-5 min-w-[154px]" src={item.src} alt={item.name} />
           </Link>
         );
@@ -23,8 +24,15 @@ const NavBarList = ({ items }) => {
       case "icon":
         itemList = <FontAwesomeIcon name={item.name} size="lg" />;
         break;
+      case "button":
+        itemList = <GoogleAuth />;
+        break;
       default:
-        itemList = <p>{item.name}</p>;
+        itemList = (
+          <Link to={item.link === null ? null : item.link}>
+            <p>{item.name}</p>
+          </Link>
+        );
         break;
     }
     return itemList;
