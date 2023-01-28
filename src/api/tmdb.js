@@ -1,7 +1,5 @@
 import axios from "axios";
 
-export const API_KEY = "410bdc996cd1816dbd359443c6c9970b";
-
 // export const instance = axios.create({
 //   baseURL: process.env.REACT_APP_BASE_URL,
 //   params: {
@@ -9,42 +7,46 @@ export const API_KEY = "410bdc996cd1816dbd359443c6c9970b";
 //         // api_key: process.env.API_KEY,
 //       },
 // });
+
+const baseUrl = process.env.REACT_APP_BASE_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
+
+console.log(baseUrl);
+
 export const instance = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
+  baseURL: baseUrl,
   headers: {
     Accept: "application/json",
   },
   params: {
-    api_key: "410bdc996cd1816dbd359443c6c9970b",
+    api_key: apiKey,
     // api_key: process.env.API_KEY,
   },
 });
 
 // export const BASE_API = axios.create({
-//   baseURL: "https://api.themoviedb.org/3/",
+//   baseURL: "${baseUrl}/",
 // });
 const BASE_AXIOS = axios.create({
-  baseURL: "https://api.themoviedb.org/3%22%7D",
+  baseURL: baseUrl,
 });
 // export const Popular_URL =
-//   "https://api.themoviedb.org/3/movie/popular?api_key=410bdc996cd1816dbd359443c6c9970b&language=en-US&page=1";
+//   "${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1";
 // export const Discover_URL =
-//   "https://api.themoviedb.org/3/discover/movie?api_key=410bdc996cd1816dbd359443c6c9970b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
+//   "${baseUrl}/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
 //
-// //export const detail_url= `https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=410bdc996cd1816dbd359443c6c9970b&language=en-US`
+// //export const detail_url= `${baseUrl}/movie/${movie_id}/credits?api_key=${apiKey}&language=en-US`
 // export const img_url = "http://image.tmdb.org/t/p/w500";
 // export const fetchSingleMovie = (movieId) =>
 //   BASE_AXIOS.get(
-//     `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`
+//     `${baseUrl}/movie/${movieId}?api_key=${API_KEY}`
 //   );
 
 export const fetchSingleMovieCredits = (id) =>
-  BASE_AXIOS.get(
-    `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`
-  );
+  BASE_AXIOS.get(`${baseUrl}/movie/${id}/credits?api_key=${apiKey}`);
 // export const fetchReviews = (movieId) =>
 //   BASE_AXIOS.get(
-//     `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`
+//     `${baseUrl}/movie/${movieId}/reviews?api_key=${API_KEY}`
 //   );
 // export const fetchRecommendations = (movieId) =>
 //   BASE_AXIOS.get(`/movie/${movieId}/similar?api_key=${API_KEY}`);
