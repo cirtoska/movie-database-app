@@ -14,9 +14,11 @@ const MovieList = ({ fetch }) => {
     fetchMovies();
   }, [fetch]);
 
+  if (movies.length === 0) return null;
+
   return (
     <div className="flex pb-5 pl-5 pr-10 overflow-x-auto">
-      {movies.map((movie, id) => {
+      {movies?.map((movie, id) => {
         return <MovieCard key={id} {...movie} />;
       })}
       <div className="absolute right-0 top-0 w-16 h-full">
