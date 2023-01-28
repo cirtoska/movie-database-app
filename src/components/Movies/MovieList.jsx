@@ -14,8 +14,6 @@ const MovieList = ({ fetch }) => {
     fetchMovies();
   }, [fetch]);
 
-  if (movies.length === 0) return null;
-
   return (
     <div className="flex pb-5 pl-5 pr-10 overflow-x-auto">
       {movies?.map((movie, id) => {
