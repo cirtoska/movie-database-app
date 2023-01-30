@@ -71,7 +71,7 @@ const MovieHeader = () => {
               <span className="release">{movie.release_date}</span>
               <span className="text-3xl">&sdot;</span>
               <span className="flex flex-row">
-                {movie.genres.map((genre) => (
+                {movie?.genres?.map((genre) => (
                   <div key={genre.id} className="pr-1">
                     {genre.name}
                   </div>
@@ -107,7 +107,7 @@ const MovieHeader = () => {
                 {movieCrewData
                   ?.filter((item) => job.includes(item.job.toLowerCase()))
                   .reduce((acc, curr) => {
-                    const names = acc.map((item) => item.name);
+                    const names = acc?.map((item) => item.name);
                     if (!names.includes(curr.name)) {
                       acc.push({ name: curr.name, jobs: [curr.job] });
                     } else {

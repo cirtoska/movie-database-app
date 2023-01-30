@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FontAwesomeIcon from "react-fontawesome";
-import GoogleAuth from "../../api/GoogleAuth";
+// import GoogleAuth from "../../api/GoogleAuth";
 
 const NavBarList = ({ items }) => {
   const getItem = (item) => {
@@ -25,7 +25,7 @@ const NavBarList = ({ items }) => {
         itemList = <FontAwesomeIcon name={item.name} size="lg" />;
         break;
       case "button":
-        itemList = <GoogleAuth />;
+        itemList = "login";
         break;
       default:
         itemList = (
