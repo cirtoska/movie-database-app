@@ -1,17 +1,7 @@
 import axios from "axios";
 
-// export const instance = axios.create({
-//   baseURL: process.env.REACT_APP_BASE_URL,
-//   params: {
-//         api_key: `${API_KEY}`,
-//         // api_key: process.env.API_KEY,
-//       },
-// });
-
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
-
-console.log(baseUrl);
 
 export const instance = axios.create({
   baseURL: baseUrl,

@@ -8,8 +8,8 @@ import Section from "../../layouts/Section/Section";
 
 function Home() {
   const [sectionToggle, setSectionToggle] = useState({
-    first: "Popular Movies",
-    second: "TV Shows",
+    popularMovies: "Popular Movies",
+    popularTVShows: "Popular Shows",
     third: "Trending Today",
     fourth: "This Week",
   });
@@ -20,19 +20,21 @@ function Home() {
       [section]: selectedValue,
     }));
   };
-
+  // console.log(sectionToggle.latestMovies);
   return (
     <>
       <Header />
       <Container>
         <Banner />
         <Section
-          title="What's Popular"
-          items={["Popular Movies", "TV Shows"]}
-          onToggle={handleToggleValue.bind(null, "first")}
-          isToggled={sectionToggle.first === "Popular Movies" ? false : true}
+          title="What's New"
+          items={["Popular Movies", "Popular Shows"]}
+          onToggle={handleToggleValue.bind(null, "popularMovies")}
+          isToggled={
+            sectionToggle.popularMovies === "Popular Movies" ? false : true
+          }
         >
-          <MovieList fetch={sectionToggle.first} />
+          <MovieList fetch={sectionToggle.popularMovies} />
         </Section>
         <Section
           title="Trending"

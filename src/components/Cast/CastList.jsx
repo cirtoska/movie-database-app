@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import { fetchSingleMovieCredits } from "../../api/tmdb";
+import { fetchSingleMovieCredits } from "../../api/theMovieDB";
 import CastCard from "./CastCard";
 import Blur from "../../baseUI/blur/Blur";
 

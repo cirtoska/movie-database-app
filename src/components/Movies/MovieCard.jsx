@@ -19,6 +19,8 @@ const MovieCard = ({
     airDate = new Date(first_air_date);
   } else if (release_date) {
     airDate = new Date(release_date);
+  } else {
+    return null;
   }
 
   const options = { year: "numeric", month: "short", day: "numeric" };
@@ -27,7 +29,13 @@ const MovieCard = ({
   return (
     <div className="flex flex-col pl-5 gap-2">
       <div className="relative">
-        <Link to={media_type === "movie" ? `/movie/${id}` : `/tv/${id}`}>
+        <Link
+          to={
+            media_type === "movie" || release_date
+              ? `/movie/${id}`
+              : `/tv/${id}`
+          }
+        >
           <img
             src={getPosterImg}
             alt={name || title}

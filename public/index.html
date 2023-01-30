@@ -15,31 +15,7 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
-
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          appId: "{your-app-id}",
-          cookie: true,
-          xfbml: true,
-          version: "{api-version}",
-        });
-
-        FB.AppEvents.logPageView();
-      };
-
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-          return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
-    </script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <title>The Movie Database App</title>
   </head>
   <body>

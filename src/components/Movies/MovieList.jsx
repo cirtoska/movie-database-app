@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
-import { instance } from "../../api/tmdb";
+import api from "../../api/theMovieDB";
 import { request } from "../../api/request";
 import Blur from "../../baseUI/blur/Blur";
 
 const MovieList = ({ fetch }) => {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const fetchMovies = async () => {
-      const { data } = await instance.get(request[fetch]);
+      const { data } = await api.get(request[fetch]);
       setMovies(data.results);
     };
     fetchMovies();

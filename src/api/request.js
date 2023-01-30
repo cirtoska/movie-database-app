@@ -1,6 +1,6 @@
 export const request = {
   "Popular Movies": "/movie/popular",
-  "TV Shows": "/tv/top_rated",
+  "Popular Shows": "/tv/popular",
   "Trending Today": "/trending/all/day",
   "This Week": "/trending/all/week",
   "Movie Details": "/movie",

@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 import SearchInput from "../../baseUI/Button/Input/SearchInput";
 import SearchButton from "../../baseUI/Button/SearchButton";
+import { useEffect } from "react";
+import { fetchSearchQuery } from "../../api/theMovieDB";
 
 const Banner = () => {
   const searchInputRef = useRef();
+  const [query, getQuery] = useState("");
+
+  const fetchMovie = async () => {
+    await fetchSearchQuery({ query });
+  };
+
+  useEffect(() => {
+    if (query) {
+      fetchMovie();
+    }
+  }, [query]);
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -12,8 +25,9 @@ const Banner = () => {
     }
   };
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
     alert(`Searching ${searchInputRef.current.value}`);
+    // getQuery(e.target.value);
   };
 
   return (
