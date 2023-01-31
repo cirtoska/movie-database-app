@@ -5,9 +5,30 @@ import noPosterAvailable from "../../assets/images/no-poster-available.jpg";
 const ListResults = ({ data, load }) => {
   const getPosterImg = `https://www.themoviedb.org/t/p/w94_and_h141_bestv2${data.poster_path}`;
   const profilePath = `https://www.themoviedb.org/t/p/w90_and_h90_face/${data.profile_path}`;
+
+  // let itemLink
+  //   if (data.media_type === "movie"){
+  //     return `/movie/${data.id}`
+  //   } else if (data.media_type === "tv"){
+  //     return `/tv/${data.id}`
+  //   } else {
+  //     return `/person/${data.id}`
+  //   }
+
+  let itemLink;
+  if (data.media_type === "movie") {
+    itemLink = `/movie/${data.id}`;
+  } else if (data.media_type === "tv") {
+    itemLink = `/tv/${data.id}`;
+  } else if (data.media_type === "person") {
+    itemLink = `/person/${data.id}`;
+  } else {
+    return null;
+  }
+
   return (
     <Link
-      to={`/movie/${data.id}`}
+      to={itemLink}
       className="max-w-sm w-full lg:max-w-full lg:flex mb-4 rounded shadow-md"
     >
       {/* <Link to={`/movie/${movie.id}`}> */}
@@ -15,7 +36,8 @@ const ListResults = ({ data, load }) => {
         <img
           src={getPosterImg || profilePath}
           alt={data.title || data.name}
-          className="h-48 flex-none object-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+          className="flex-none object-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+          style={{ width: 90 }}
         />
       ) : (
         <img
@@ -35,7 +57,7 @@ const ListResults = ({ data, load }) => {
             {data.release_date || data.first_air_date}
           </p>
           <p className="text-gray-700 text-base">
-            {/* {data.overview.substring(0, 200)}... */}
+            {data?.overview?.substring(0, 200)}...
           </p>
         </div>
       </div>
