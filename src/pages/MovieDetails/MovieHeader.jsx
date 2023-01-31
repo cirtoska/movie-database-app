@@ -61,7 +61,7 @@ const MovieHeader = () => {
             src={getPosterImg}
             alt={movie.original_title}
           />
-          <section className="header">
+          <section className="movie-header">
             <h2 className="text-4xl font-extrabold">
               {movie.original_title}{" "}
               <span className="opacity-80 font-normal">({formattedDate})</span>

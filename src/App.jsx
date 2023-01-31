@@ -7,10 +7,12 @@ import TVShows from "./pages/TVShows/TVShows";
 import SearchResults from "./components/Search/SearchResults";
 import Genre from "./pages/Genre/Genre";
 import Person from "./pages/Person/Person";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />

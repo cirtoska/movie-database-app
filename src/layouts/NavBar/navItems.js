@@ -28,10 +28,10 @@ export const navItemsLeft = [
 ];
 
 export const navItemsRight = [
-  {
-    name: "plus",
-    type: "icon",
-  },
+  // {
+  //   name: "plus",
+  //   type: "icon",
+  // },
   {
     name: "EN",
     type: "language",

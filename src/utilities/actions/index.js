@@ -183,7 +183,7 @@ export const fetchSearch = (query, page) => {
   return (dispatch) => {
     dispatch({ type: TYPES.LOADING });
     return api
-      .get("search/movie", {
+      .get("search/multi", {
         params: {
           query,
           page,

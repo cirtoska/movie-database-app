@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SearchInput from "../../baseUI/Button/Input/SearchInput";
 import SearchButton from "../../baseUI/Button/SearchButton";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchSearchQuery } from "../../api/theMovieDB";
 
 const Banner = () => {
   const searchInputRef = useRef();
-  const [query, getQuery] = useState("");
+  const [name, setName] = useState("");
+  let navigate = useNavigate();
 
-  const fetchMovie = async () => {
-    await fetchSearchQuery({ query });
+  const wordSearch = (e) => {
+    setName(e.target.value);
   };
 
-  useEffect(() => {
-    if (query) {
-      fetchMovie();
-    }
-  }, [query]);
+  // useEffect(() => {
+  //   if (query) {
+  //     fetchMovie();
+  //   }
+  // }, [query]);
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -26,8 +26,11 @@ const Banner = () => {
   };
 
   const handleSearch = (e) => {
-    alert(`Searching ${searchInputRef.current.value}`);
-    // getQuery(e.target.value);
+    // alert(`Searching ${searchInputRef.current.value}`);
+    e.preventDefault();
+    if (!name) return false;
+    navigate.push(`search/${name}`);
+    setName("");
   };
 
   return (
@@ -42,7 +45,7 @@ const Banner = () => {
         <div className="relative">
           <SearchInput ref={searchInputRef} onKeyDown={handleKeyDown} />
           <div className="absolute top-0 right-0">
-            <SearchButton onClick={handleSearch} />
+            <SearchButton onSubmit={handleSearch} />
           </div>
         </div>
       </div>

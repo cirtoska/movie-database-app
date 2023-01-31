@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FontAwesomeIcon from "react-fontawesome";
 import GoogleAuth from "../../api/GoogleAuth";
+import ToggleSearch from "./ToggleSearch";
 
 const NavBarList = ({ items }) => {
   const getItem = (item) => {
@@ -22,7 +23,7 @@ const NavBarList = ({ items }) => {
         );
         break;
       case "icon":
-        itemList = <FontAwesomeIcon name={item.name} size="lg" />;
+        itemList = <ToggleSearch name={item.name} />;
         break;
       case "button":
         itemList = <GoogleAuth />;
