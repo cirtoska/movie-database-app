@@ -6,6 +6,8 @@ import ContentWrapper from "../../layouts/ContentWraper/ContentWrapper";
 import WhiteColumn from "../../layouts/WhiteColumn/WhiteColumn";
 import SectionPanel from "../../layouts/SectionPanel/SectionPanel";
 import Media from "../../components/Movies/Media";
+import Recommendations from "../../components/Recommendations/Recommendations";
+import SplitColumn from "../../layouts/SplitColumn/SplitColumn";
 
 const Movie = () => {
   return (
@@ -20,10 +22,13 @@ const Movie = () => {
           <SectionPanel>
             <Media />
           </SectionPanel>
+          <SectionPanel>
+            <Recommendations />
+          </SectionPanel>
         </WhiteColumn>
-        <aside className="sidebar">
+        <SplitColumn>
           <Sidebar />
-        </aside>
+        </SplitColumn>
       </ContentWrapper>
     </>
   );

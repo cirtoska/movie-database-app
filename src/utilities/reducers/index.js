@@ -9,6 +9,7 @@ import recommendReducer from "./recomendReducer";
 import loadReducer from "./loadReducer";
 import barReducer from "./barReducer";
 import searchReducer from "./searchReducer";
+import externalIdsReducer from "./externalIdsReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -16,6 +17,7 @@ export default combineReducers({
   discover: discoverReducer,
   movie: movieReducer,
   recommend: recommendReducer,
+  externalIds: externalIdsReducer,
   person: personReducer,
   genre: genresReducer,
   active: activeReducer,

@@ -115,6 +115,26 @@ export const asyncFetchMovieRecommend = (id) => {
   };
 };
 
+const fetchMovieExternalIds = (data) => {
+  return {
+    type: TYPES.FETCH_MOVIE_EXTERNAL_IDS,
+    payload: data,
+  };
+};
+
+export const asyncFetchMovieExternalIds = (id) => {
+  return (dispatch) => {
+    dispatch({ type: TYPES.LOADING });
+    return api
+      .get(`movie/${id}/external_ids`)
+      .then((res) => {
+        dispatch(fetchMovieExternalIds(res.data.results));
+        dispatch({ type: TYPES.LOADSUCCESS });
+      })
+      .catch(() => dispatch({ type: TYPES.LOADERROR }));
+  };
+};
+
 const fetchPerson = (data) => {
   return {
     type: TYPES.FETCH_PERSON,
