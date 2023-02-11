@@ -57,7 +57,7 @@ const MovieHeader = () => {
       <div className="p-10 bg-movieGradient text-white">
         <div className="max-w-[1200px] flex items-center justify-center gap-10 mx-auto">
           <img
-            className="rounded-t-lg mx-auto"
+            className="rounded-lg mx-auto"
             src={getPosterImg}
             alt={movie.original_title}
           />
