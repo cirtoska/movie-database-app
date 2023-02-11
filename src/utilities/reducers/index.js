@@ -10,6 +10,8 @@ import loadReducer from "./loadReducer";
 import barReducer from "./barReducer";
 import searchReducer from "./searchReducer";
 import externalIdsReducer from "./externalIdsReducer";
+import tvShowReducer from "./tvShowReducer";
+import tvCastReducer from "./tvCastReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -24,4 +26,6 @@ export default combineReducers({
   load: loadReducer,
   bar: barReducer,
   search: searchReducer,
+  tvShow: tvShowReducer,
+  tvCast: tvCastReducer,
 });

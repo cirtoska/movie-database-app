@@ -14,3 +14,7 @@ export const RESETLOAD = "RESETLOAD";
 export const OPEN = "OPEN";
 export const CLOSE = "CLOSE";
 export const FETCH_SEARCH = "FETCH_SEARCH";
+
+// TV Shows
+export const FETCH_TVSHOW = "FETCH_TVSHOW";
+export const FETCH_TVSHOW_CAST = "FETCH_TVSHOW_CAST";

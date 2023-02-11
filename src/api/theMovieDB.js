@@ -21,6 +21,9 @@ export default axios.create({
 export const fetchSingleMovieCredits = (id) =>
   BASE_AXIOS.get(`${baseUrl}/movie/${id}/credits?api_key=${apiKey}`);
 
+export const fetchSingleTVCredits = (person_id) =>
+  BASE_AXIOS.get(`${baseUrl}/person/${person_id}/tv_credits?api_key=${apiKey}`);
+
 export const fetchSearchQuery = (query) =>
   BASE_AXIOS.get(
     `${baseUrl}/search/movie?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${query}`

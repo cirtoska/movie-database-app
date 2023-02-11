@@ -72,10 +72,8 @@ const MovieHeader = () => {
               <span className="text-3xl">&sdot;</span>
               <span className="flex flex-row">
                 {movie?.genres?.map((genre) => (
-                  <Link to={`/genres/${genre.name}`}>
-                    <div key={genre.id} className="pr-1">
-                      {genre.name}
-                    </div>
+                  <Link to={`/genres/${genre.name}`} key={genre.id}>
+                    <div className="pr-1">{genre.name}</div>
                   </Link>
                 ))}
               </span>

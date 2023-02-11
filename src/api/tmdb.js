@@ -34,6 +34,8 @@ const BASE_AXIOS = axios.create({
 
 export const fetchSingleMovieCredits = (id) =>
   BASE_AXIOS.get(`${baseUrl}/movie/${id}/credits?api_key=${apiKey}`);
+export const fetchSingleTVCredits = (tv_id) =>
+  BASE_AXIOS.get(`${baseUrl}/tv/${tv_id}/credits?api_key=${apiKey}`);
 // export const fetchReviews = (movieId) =>
 //   BASE_AXIOS.get(
 //     `${baseUrl}/movie/${movieId}/reviews?api_key=${API_KEY}`

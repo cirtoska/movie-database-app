@@ -216,3 +216,63 @@ export const fetchSearch = (query, page) => {
       .catch(() => dispatch({ type: TYPES.LOADERROR }));
   };
 };
+
+// TV SHOWS
+
+const fetchTvShow = (data) => {
+  return {
+    type: TYPES.FETCH_TVSHOW,
+    payload: data,
+  };
+};
+
+export const asyncFetchTvShow = (tv_id) => {
+  return (dispatch) => {
+    dispatch({ type: TYPES.LOADING });
+    return api
+      .get(`tv/${tv_id}`, {
+        params: {
+          append_to_response: "videos",
+        },
+      })
+      .then((res) => {
+        dispatch(fetchTvShow(res.data));
+        dispatch({ type: TYPES.LOADSUCCESS });
+      })
+      .catch(() => dispatch({ type: TYPES.LOADERROR }));
+  };
+};
+
+const fetchTVCast = (data) => {
+  return {
+    type: TYPES.FETCH_TVSHOW_CAST,
+    payload: data,
+  };
+};
+
+export const asyncFetchTVCast = (tv_id) => {
+  return (dispatch) => {
+    return api.get(`tv/${tv_id}/credits`).then((res) => {
+      dispatch(fetchTVCast(res.data));
+    });
+  };
+};
+// const fetchTVPerson = (data) => {
+//   return {
+//     type: TYPES.FETCH_TVSHOW_CAST,
+//     payload: data,
+//   };
+// };
+
+// export const asyncFetchTVPerson = (tv_id) => {
+//   return (dispatch) => {
+//     dispatch({ type: TYPES.LOADING });
+//     return api
+//       .get(`tv/${tv_id}/credits`)
+//       .then((res) => {
+//         dispatch(fetchTVPerson(res.data));
+//         dispatch({ type: TYPES.LOADSUCCESS });
+//       })
+//       .catch(() => dispatch({ type: TYPES.LOADERROR }));
+//   };
+// };
