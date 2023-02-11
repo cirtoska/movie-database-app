@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CastCard = ({ name, character, profile_path, gender }) => {
+const CastCard = ({ name, character, profile_path, gender, id }) => {
   const getProfileImg = `https://www.themoviedb.org/t/p/w138_and_h175_face${profile_path}`;
 
   let noProfileImg;
@@ -11,7 +12,10 @@ const CastCard = ({ name, character, profile_path, gender }) => {
   }
 
   return (
-    <div className="shadow-md border-[1px] border-slate-50 m-2 rounded-md">
+    <Link
+      to={`/person/${id}`}
+      className="shadow-md border-[1px] border-slate-50 m-2 rounded-md"
+    >
       <div className=" w-[138px]">
         <img
           src={profile_path === null ? noProfileImg : getProfileImg}
@@ -22,7 +26,7 @@ const CastCard = ({ name, character, profile_path, gender }) => {
         <p className="font-bold p-2 pb-0  whitespace-normal">{name}</p>
         <p className="px-2 pb-2 whitespace-normal">{character}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

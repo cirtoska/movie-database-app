@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { instance } from "../../api/tmdb";
 import ProgressCircle from "../../baseUI/progress-circle/Progress";
@@ -72,9 +72,11 @@ const MovieHeader = () => {
               <span className="text-3xl">&sdot;</span>
               <span className="flex flex-row">
                 {movie?.genres?.map((genre) => (
-                  <div key={genre.id} className="pr-1">
-                    {genre.name}
-                  </div>
+                  <Link to={`/genres/${genre.name}`}>
+                    <div key={genre.id} className="pr-1">
+                      {genre.name}
+                    </div>
+                  </Link>
                 ))}
               </span>
               <span className="text-3xl">&sdot;</span>

@@ -14,7 +14,7 @@ const CastList = () => {
 
   const movieCastData = movieCreditsQuery?.data?.cast;
   const topBilledCast = movieCastData?.slice(0, 9);
-
+  console.log(topBilledCast);
   return (
     <>
       <h3 className="text-2xl font-semibold mx-3">Top Billed Cast</h3>
