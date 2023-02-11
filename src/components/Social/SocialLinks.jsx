@@ -7,26 +7,24 @@ const openInNewTab = (url) => {
 
 const SocialLinks = ({ imdb_id, homepage }) => {
   const imdbUrl = `https://www.imdb.com/title/${imdb_id}`;
+  console.log(imdbUrl);
 
-  const handleClick = () => {
-    window.open(imdbUrl, "_blank");
-  };
   return (
     <div className="flex">
-      <button
-        role="link"
-        onClick={handleClick}
+      <a
+        href={imdbUrl}
+        target="_blank"
         className="mr-5 text-black cursor-pointer hover:text-slate-400"
       >
         <FaImdb size="3rem" />
-      </button>
-      <button
-        role="link"
-        onClick={() => openInNewTab(`${homepage}`)}
+      </a>
+      <a
+        href={homepage}
+        target="_blank"
         className="text-black cursor-pointer cursor-pointer hover:text-slate-400"
       >
         <FaLink size="2.5rem" />
-      </button>
+      </a>
     </div>
   );
 };

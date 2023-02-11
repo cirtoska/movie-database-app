@@ -22,8 +22,6 @@ const Sidebar = () => {
     dispatch(asyncFetchMovieExternalIds(param.id));
   }, [dispatch]);
 
-  console.log(movie);
-
   return (
     <div className="w-[300px]">
       <div className="mb-4">
